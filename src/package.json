@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "watch": "tailwindcss -i ./Styles/app.css -o ./wwwroot/css/app.css --watch",
+    "buildcss:watch": "tailwindcss -i ./Styles/app.css -o ./wwwroot/css/app.css --watch",
     "buildcss:dev": "cross-env TAILWIND_MODE=build postcss ./Styles/app.css -o ./wwwroot/css/app.css",
     "buildcss:release": "cross-env NODE_ENV=production postcss ./Styles/app.css -o ./wwwroot/css/app.css"
   },
