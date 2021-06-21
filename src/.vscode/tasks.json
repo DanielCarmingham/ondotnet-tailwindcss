@@ -5,6 +5,7 @@
             "label": "build",
             "command": "dotnet",
             "type": "process",
+            "group": "build",
             "args": [
                 "build",
                 "${workspaceFolder}/src/BlazorTailwind.csproj",
@@ -17,6 +18,7 @@
             "label": "publish",
             "command": "dotnet",
             "type": "process",
+            "group": "build",
             "args": [
                 "publish",
                 "${workspaceFolder}/src/BlazorTailwind.csproj",
@@ -26,17 +28,23 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "watch",
+            "label": "build:watch",
             "command": "dotnet",
             "type": "process",
+            "group": "build",
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/src/BlazorTailwind.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "type": "npm",
+            "script": "buildcss:watch",
+            "group": "build",
+            "problemMatcher": [],
+            "label": "npm: buildcss:watch - src",
+            "detail": "npx tailwindcss -i ./Styles/app.css -o ./wwwroot/css/app.css --watch"
         }
     ]
 }
